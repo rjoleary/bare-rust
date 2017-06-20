@@ -1,16 +1,14 @@
 #![feature(core_intrinsics)]
-#![feature(libc)]
 #![feature(lang_items, start)]
 #![no_std]
 #![no_main]
 use core::intrinsics;
 
-extern crate libc;
-
 fn putc(data: u8) {
+    // UART address is specific to QEMU's virt machine.
+    let uart_rx = 0x09000000 as *mut u32;
     unsafe {
-        // Uart address is specific to qemu's virt machine.
-        core::intrinsics::volatile_store(0x09000000 as *mut u32, data as u32);
+        intrinsics::volatile_store(uart_rx, data as u32);
     }
 }
 
