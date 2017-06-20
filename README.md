@@ -23,3 +23,7 @@ QEMU:
     qemu-system-arm --machine virt --kernel main
 
     # Quit qemu with CTRL-A X
+
+Reference:
+
+    https://doc.rust-lang.org/unstable-book/language-features/lang-items.html
