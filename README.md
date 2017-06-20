@@ -16,7 +16,7 @@ Setup:
 Building:
 
     rustc --target=arm-unknown-linux-gnueabihf -O --emit asm main.rs
-    /usr/bin/arm-none-eabi-as main.s -O main
+    /usr/bin/arm-none-eabi-as main.s -o main
 
 QEMU:
 
